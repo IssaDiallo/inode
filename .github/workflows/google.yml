@@ -78,7 +78,7 @@ jobs:
         gcloud container clusters get-credentials $GKE_CLUSTER \
           --zone $GKE_ZONE \
           --project $GKE_PROJECT
-        helm upgrade $GKE_PROJECT $GKE_PROJECT-cluster/ \
+        helm upgrade chart ./chart/ \
           --set gke-test.image.tag=$GITHUB_SHA \
           --wait \
           --debug
