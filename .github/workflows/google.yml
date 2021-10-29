@@ -81,6 +81,5 @@ jobs:
         helm upgrade $GKE_PROJECT $GKE_PROJECT-cluster/ \
           --set gke-test.image.tag=$GITHUB_SHA \
           --wait
-        kubectl cluster-info
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
