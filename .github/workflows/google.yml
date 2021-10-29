@@ -75,8 +75,8 @@ jobs:
     - name: Deploy
       run: |
         gcloud container clusters get-credentials $GKE_CLUSTER \
-          --zone $GKE_ZONE \
-          --project $GKE_PROJECT --region $REGION
+          --zone=$GKE_ZONE \
+          --project=$GKE_PROJECT --region=$REGION
         helm upgrade $GKE_PROJECT $GKE_PROJECT-cluster/ \
           --set static-site.image.tag=$GITHUB_SHA \
           --wait
