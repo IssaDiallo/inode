@@ -78,7 +78,7 @@ jobs:
           --zone=$GKE_ZONE \
           --project=$GKE_PROJECT
         helm upgrade $GKE_PROJECT $GKE_PROJECT-cluster/ \
-          --set static-site.image.tag=$GITHUB_SHA \
+          --set gke-test.image.tag=$GITHUB_SHA \
           --wait
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
