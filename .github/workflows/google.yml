@@ -82,7 +82,7 @@ jobs:
           --set gke-test.image.tag=$GITHUB_SHA \
           --install \
           --wait \
-          --timeout 900s
+          --timeout 1800s
           --debug
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
