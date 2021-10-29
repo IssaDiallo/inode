@@ -77,8 +77,8 @@ jobs:
         gcloud config unset account
         gcloud config set project $GKE_PROJECT
         gcloud container clusters get-credentials $GKE_CLUSTER \
-          --zone=$GKE_ZONE \
-          --project=$GKE_PROJECT
+          --zone $GKE_ZONE \
+          --project $GKE_PROJECT
         helm upgrade $GKE_PROJECT $GKE_PROJECT-cluster/ \
           --set gke-test.image.tag=$GITHUB_SHA \
           --wait
