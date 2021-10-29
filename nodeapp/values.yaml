@@ -3,7 +3,7 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 image:
-  repository: gcr.io/issa-project1/static-site
+  repository: gcr.io/issa-project1/nodeapp
   tag: latest
   pullPolicy: IfNotPresent 
   resources:
