@@ -74,12 +74,13 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |
+        sudo apt install google-cloud-sdk=297.0.1-0
         gcloud config set project $GKE_PROJECT
         gcloud container clusters get-credentials $GKE_CLUSTER \
           --zone=$GKE_ZONE \
           --project=$GKE_PROJECT
-        #helm upgrade $GKE_PROJECT $GKE_PROJECT-cluster/ \
+        helm upgrade $GKE_PROJECT $GKE_PROJECT-cluster/ \
           --set gke-test.image.tag=$GITHUB_SHA \
           --wait
-        #kubectl rollout status deployment/$DEPLOYMENT_NAME
-        #kubectl get services -o wide
+        kubectl rollout status deployment/$DEPLOYMENT_NAME
+        kubectl get services -o wide
