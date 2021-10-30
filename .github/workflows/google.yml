@@ -82,5 +82,7 @@ jobs:
           --install \
           --wait \
           --debug
+          --namespace=k8s-test \
+          --timeout 600s
         kubectl rollout status deployment/$DEPLOYMENT_NAME-deployment
         kubectl get services -o wide
