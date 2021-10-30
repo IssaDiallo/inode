@@ -4,7 +4,7 @@ replicaCount: 1
 revisionHistoryLimit: 1
 image:
   repository: gcr.io/issa-project1/nodeapp
-  tag: ""
+  tag: latest
   pullPolicy: IfNotPresent 
   resources:
     requests:
