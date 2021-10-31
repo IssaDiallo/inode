@@ -3,14 +3,14 @@ kind: Deployment
 metadata:
   name: nodeapp
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      deployment: hello
+      deployment: nodeapp
   template:
     metadata:
       labels:
-        deployment: hello
+        deployment: nodeapp
     spec:
       containers:
       - name: the-container
@@ -24,10 +24,10 @@ spec:
         - name: ALT_GREETING
           valueFrom:
             configMapKeyRef:
-              name: the-map
+              name: nodeapp
               key: altGreeting
         - name: ENABLE_RISKY
           valueFrom:
             configMapKeyRef:
-              name: the-map
+              name: nodeapp
               key: enableRisky
