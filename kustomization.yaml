@@ -9,6 +9,6 @@ commonLabels:
   app: nodeapp
 
 resources:
-- ./kustomizes/deployment.yaml
-- ./kustomizes/service.yaml
-- ./kustomizes/configMap.yaml
+- deployment.yaml
+- service.yaml
+- configMap.yaml
