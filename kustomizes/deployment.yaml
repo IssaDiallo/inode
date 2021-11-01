@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nodeapp
-        image: gcr.io/issa-project1/nodeapp
+        image: gcr.io/issa-project1/nodeapp:b9f224c51b29e1ba56569f4c96d94b660be59e12
         command: ["/hello",
                   "--port=8080",
                   "--enableRiskyFeature=$(ENABLE_RISKY)"]
