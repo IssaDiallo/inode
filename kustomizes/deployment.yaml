@@ -13,7 +13,7 @@ spec:
         deployment: nodeapp
     spec:
       containers:
-      - name: the-container
+      - name: nodeapp
         image: gcr.io/issa-project1/nodeapp:latest
         command: ["/hello",
                   "--port=8080",
